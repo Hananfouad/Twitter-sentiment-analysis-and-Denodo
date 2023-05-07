@@ -1,70 +1,34 @@
 # Twitter-sentiment-analysis-and-Denodo
-Creating a custom function
-1.	Install the trained classifier
-2.	Install eclipse
-3.	Configure Eclipse to run with Java 11.
-4.	Installing Denodo4eEclipse Pulgin
 
+This document explains how to integrate Twitter with Denodo and how to use sentiment analysis libraries to classify tweets according to information contained in the text of the tweets.
+
+Sentiment analysis refers to the use of natural language processing techniques to extract subjective information from texts.
+
+These techniques can be used to determine the attitude of a speaker regarding some topic or the overall contextual polarity of a text.
+There are multiple libraries available to perform sentiment analysis in Java such as Gate,  OpenNLP, Lingpipe, among others.
+
+
+In this article we will use LingPipe as an example for several reasons but any other Java library could be easily integrated with Denodo:
+
+
+LingPipe is open-source (not free for commercial purposes).
+It implements many of the most popular POS (Part-Of-Speech) tagging, NER (Named Entity Recognition) and classification algorithms.
+LingPipe will just classify the tweets into positive, negative or neutral.
+
+An easy way to apply sentiment analysis within Denodo is by creating a custom function that, using a sentiment analysis library, returns the results coming from the library when a specific text is passed as input.
+
+In this project we will explain how to create a custom function to classify tweets coming from a JSON data source using the Twitter API.
+
+1. Creating a custom function
+2. we need to import the following libraries jar files from the LingPipe distribution: ● lingpipe-4.1.0.jar ● log4j.jar
+3. Export the project
+4.	Import Extensions in Denodo
+5.	Test
+6.	Create a JSON Datasource
+7.	Connecting Denodo with Twitter
+8.	Create a base view
+9.	Create a flatten view
  
- 
-5.	To create the Denodo Custom function project, go to File > New > Other and type denodo in the textbox.
- 
-6.	 
-7.	 
-8.	we need to import the following libraries jar files from the LingPipe distribution: ● lingpipe-4.1.0.jar ● log4j.jar
- 
-
- 
-9.	Back to the code of the custom function we will need define a constructor in our class to load the classifier as follows:
- 
-
-10.	Debug
- 
-
-
-
-
-11.	Export the project
- 
-
-
-
-
-
-
-
-12.	Import Extensions in Denodo
- 
-13.	Test
- 
-
-
-
-
-
-
-
-
-
-
-
-14.	Create a JSON Datasource
- 
-15.	Connecting Denodo with Twitter
- 
-16.	 
-17.	 
-18.	Create a base view
- 
-
-
-19.	Create a flatten view
- 
-
-
-20.	Add a new field sentiment with field expression mood(text)
-21.	 
-
 
 
 
